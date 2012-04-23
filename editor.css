@@ -1,0 +1,8 @@
+/* CSS declarations go here */
+
+.textarea {
+	border: 1px solid black;
+	width: 100%;
+	height: 300px;
+	overflow: auto;
+}

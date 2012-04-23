@@ -1,0 +1,32 @@
+<head>
+	<script type="text/javascript" src="codemirror/codemirror.js"></script>
+	<link rel="stylesheet" href="codemirror/codemirror.css">
+	<script type="text/javascript" src="mode/xml/xml.js"></script>
+	<script type="text/javascript" src="mode/javascript/javascript.js"></script>
+	<script type="text/javascript" src="mode/css/css.js"></script>
+	<script type="text/javascript" src="mode/htmlmixed/htmlmixed.js"></script>
+	<title>editor</title>
+	<style type="text/css">
+		html, body, .expand { width: 100%; height: 100%; }
+		html, body, .close { border: none; margin: 0px; padding: 0px; }
+		html, body { overflow: hidden; }
+		div.CodeMirror { height: 100%;}
+	</style>
+	<script type="text/javascript">
+		function check() {
+			if (!window.parent || !window.parent.editbox) {
+				window.location = '/editor.html'
+			}
+		}
+		check()
+	</script>
+</head>
+
+<body class="expand close">
+	<form class="expand close" name="f">
+		<textarea class="expand close" style="background: #def;" spellcheck="false" id="ta"></textarea>
+	</form>
+</body>
+
+<template name="hello">
+</template>

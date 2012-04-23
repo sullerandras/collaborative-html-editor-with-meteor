@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Real-time HTML Editor</title>
+<style>
+	html, body { padding: 2px; border: 0; margin: 0;}
+</style>
+<script type="text/javascript">
+function split(horizontal) {
+	var e = window.parent.document.getElementById('innerframeset')
+	e.setAttribute('cols', horizontal ? '' : '50%,*')
+	e.setAttribute('rows', horizontal ? '50%,*' : '')
+	var f = window.parent.editbox.window.focusEditor
+	if (f) f()
+	if (localStorage) localStorage.setItem('split', horizontal ? 'horizontal' : 'vertical')
+}
+function reset_textarea() {
+	console.log(window,window.parent,window.parent.editbox,window.parent.editbox.window.reset_textarea)
+	var f = window.parent.editbox.window.reset_textarea
+	if (f) f()
+}
+if (localStorage && 'split' in localStorage) {
+	split(localStorage.getItem('split') == 'horizontal')
+}
+</script>
+</head>
+<body>
+	<button onclick="split(true)">Horizontal split</button>
+	<button onclick="split(false)">Vertical split</button>
+	<button onclick="reset_textarea()">Clear editor</button>
+	Collaborative editor with <a href="http://meteor.com">Meteor</a>!
+</body>
+</html>

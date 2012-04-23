@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Real-time HTML Editor</title>
+</head>
+<frameset id="frameset" resizable="yes" rows="30px,*">
+	<frame name="options" src="options.html">
+	<frameset id="innerframeset" resizable="yes" rows="50%,*">
+		<!-- about:blank confuses opera, so use javascript: URLs instead -->
+		<frame name="editbox" src="/">
+		<frame name="dynamicframe" src="javascript:'';">
+	</frameset>
+</frameset>
+</html>
